@@ -11,6 +11,7 @@
 /public/uploads
 /app/assets/images
 dump.rdb
+/db/fixtures
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
