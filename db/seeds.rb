@@ -10,7 +10,7 @@
 # require './seeds/posts'
 
 puts 'Start inserting seed "users" ...'
-3.times do
+20.times do
   user = User.create(
     email: Faker::Internet.unique.email,
     username: Faker::Internet.unique.user_name,
@@ -21,7 +21,7 @@ puts 'Start inserting seed "users" ...'
 end
 
 puts 'Start inserting seed "posts ...'
-User.limit(10).each do |user|
+User.all.each do |user|
   post = user.posts.create({ body: Faker::Hacker.say_something_smart, images: [open("#{Rails.root}/db/fixtures/dummy.png")] })
   puts "post#{post.id} has created!"
 end
