@@ -1,5 +1,5 @@
 $(function () {
-  new Swiper('.swiper-container', {
+  new Swiper('.swiper', {
     effect: 'flip',
     grabCursor: true,
     pagination: {
