@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
   def change
     create_table :posts do |t|
       t.text :body, null: false
-      t.string :images, null: false
+      t.json :images, null: false
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
