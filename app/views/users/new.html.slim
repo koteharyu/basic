@@ -1,16 +1,23 @@
-.card.mb-3.mt-5
-  = form_with model: @user do |f|
-    = render 'shared/error_messages', object: @user
-    .form-group
-      = f.text_field :username, class: 'form-control', placeholder: "user name"
-    .form-group
-      = f.email_field :email, class: 'form-control', placeholder: "email"
-    .form-group
-      = f.password_field :password, class: 'form-control', placeholder: "password"
-    .form-group
-      = f.password_field :password_confirmation, class: 'form-control', placeholder: "password_confirmation"
-    = f.submit "sign up", class: "btn btn-primary"
+.login-register-form
+  .login-register-form-inner
+    .card.mb-3
+      = form_with model: @user, class: 'card-body' do |f|
+        = render 'shared/error_messages', object: @user
+        .form-group
+          = f.label :username
+          = f.text_field :username, class: 'form-control'
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+        .form-group
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, class: 'form-control'
 
-.card
-  .card-body
-    = link_to "log in", login_path
+        = f.submit '登録', class: 'btn btn-primary'
+    .card
+      .card-body
+        | アカウントをお持ちですか
+        = link_to 'ログインする', login_path

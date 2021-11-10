@@ -2,11 +2,16 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      post: '投稿'
     attributes:
-      username: 'ユーザー名'
-      email: 'メールアドレス'
-      password: 'パスワード'
-      password_confirmation: '確認用'
+      user:
+        username: 'ユーザー名'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: '確認用'
+      post:
+        images: '画像'
+        body: '本文'
   attributes:
     created_at: '作成日時'
     updated_at: '更新日時'

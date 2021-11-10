@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def not_authenticated
-    redirect_to root_path, danger: "please login"
+    redirect_to login_path, danger: "please login"
   end
 
 end
