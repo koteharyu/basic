@@ -6,7 +6,7 @@ div id="comment-#{comment.id}"
       = comment.body
     .col-1
       - if current_user&.own?(comment)
-        = link_to comment_path(comment), class: 'mr-3', method: :delete, data: {confirm: '本当に削除しますか？'}, local: false do
+        = link_to comment_path(comment), class: 'mr-3', method: :delete, data: {confirm: '本当に削除しますか？'} do
           = icon 'far', 'trash-alt', class: 'fa-sm'
         = link_to edit_comment_path(comment), local: false do
           = icon 'far', 'edit', class: 'fa-sm'

@@ -17,4 +17,5 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white
         a.nav-link href="#"
           = icon 'far', 'user', class: 'fa-lg'
       li.nav-item
-        = link_to 'ログアウト', logout_path, class: 'nav-link', method: :delete
+        = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link', data: { confirm: "are "}
+        / = button_to 'ログアウト', logout_path, class: 'nav-link', method: :delete, data: { confirm: "are u suer?"}
