@@ -9,6 +9,8 @@
 /vendor
 .vscode
 /public/uploads
+/app/assets/images
+dump.rdb
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
