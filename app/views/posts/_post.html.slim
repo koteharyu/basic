@@ -1,11 +1,12 @@
 .card.mb-5.post
   .card-header
     .d-flex.align-items-center
-      = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle mr-1'
-      = post.user.username
+      = link_to user_path(post.user) do
+        = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle mr-1'
+        = post.user.username
       - if current_user&.own?(post)
-        .ml-auto
-          = link_to post_path(post), method: :delete, class: "mr-3", data: { confirm: "are u sure?" } do
+        .ms-auto
+          = link_to post_path(post), method: :delete, class: "me-3", data: { confirm: "are u sure?" } do
             = icon "far", "trash-alt", class: "fa-lg"
           = link_to edit_post_path(post) do
             = icon 'far', 'edit', class: 'fa-lg'
