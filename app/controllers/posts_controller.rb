@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :require_login, only: %i[show new create edit update destroy]
 
   def index
-    @random_users = User.randoms(5)
+    @users = User.recent(5)
     @posts = if current_user
                current_user.feed.includes(:user).order(created_at: :desc).page(params[:page])
              else

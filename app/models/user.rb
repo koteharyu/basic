@@ -36,7 +36,7 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-  scope :randoms, ->(count) { all.sample(count) }
+  scope :recent, ->(count) { order(created_at: :desc).limit(count) }
 
   def own?(object)
     id == object.user_id
