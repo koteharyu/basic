@@ -37,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def unlike(post)
-    like_posts.delete(post)
+    like_posts.destroy(post)
   end
 
   def like?(post)
