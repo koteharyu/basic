@@ -1,3 +1,6 @@
+# == Route Map
+#
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "posts#index"
@@ -11,4 +14,5 @@ Rails.application.routes.draw do
   resources :posts, shallow: true do
     resources :comments
   end
+  resources :likes, only: %i[create destroy]
 end
