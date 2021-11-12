@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get '/signup', to: "users#new"
 
   resources :users, only: %i[create]
-  resources :posts
+  resources :posts, shallow: true do
+    resources :comments
+  end
 end
