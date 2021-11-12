@@ -63,7 +63,7 @@ class User < ApplicationRecord
   end
 
   def following?(other_user)
-    following_ids.include?(other_user)
+    following_ids.include?(other_user.id)
   end
 
   def feed
