@@ -28,12 +28,6 @@
       hr
       / コメント一覧
       = render 'comments/comments', comments: @comments
-      hr
-      .row.no-gutters
-        .col-2
-          = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle'
-        .col-10
-          | ダミーコメントダミーコメントダミーコメント
     hr.m-0
     .post-comment.p-3
       = render 'comments/form', post: @post, comment: @comment
