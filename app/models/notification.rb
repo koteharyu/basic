@@ -20,7 +20,6 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Notification < ApplicationRecord
-  include Rails.application.routes.url_helpers
 
   belongs_to :notifiable, polymorphic: true
   belongs_to :user
@@ -30,25 +29,11 @@ class Notification < ApplicationRecord
   enum read: { unread: false, read: true }
 
   def call_appropriate_partial
-    case self.notifiable_type
-    when "Comment"
-      "commented_to_own_post"
-    when "Like"
-      "liked_to_own_post"
-    when "Relationship"
-      "followed_me"
-    end
+    notifiable.partial_name
   end
 
   def appropriate_path
-    case self.notifiable_type
-    when "Comment"
-      post_path(self.notifiable.post, anchor: "comment-#{notifiable.id}")
-    when "Like"
-      post_path(self.notifiable.post)
-    when "Relationship"
-      user_path(self.notifiable.followed)
-    end
+    notifiable.resource_path
   end
 
 end
