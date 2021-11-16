@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   namespace :mypage do
     resource :account, only: %i[edit update]
     resources :notifications, only: %i[index]
+    resource :notification_setting, only: %i[edit update]
   end
 
   require 'sidekiq/web'
