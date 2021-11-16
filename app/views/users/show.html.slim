@@ -8,5 +8,9 @@
           = @user.username
         hr
         .row
-          - @user.posts.each do |post|
-            = render 'posts/thumbnail_post', post: post
+          - if @user.posts.present?
+            - @user.posts.each do |post|
+              = render 'posts/thumbnail_post', post: post
+          - else
+            .text-center
+              p 投稿がありません。

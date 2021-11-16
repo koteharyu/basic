@@ -9,11 +9,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white
         = link_to new_post_path, class: 'nav-link' do
           = icon 'far', 'image', class: 'fa-lg'
       li.nav-item
-        a.nav-link href="#"
+        = link_to user_path(current_user), class: "nav-link" do
           = icon 'far', 'heart', class: 'fa-lg'
-      li.nav-item
-        a.nav-link href="#"
-          = icon 'far', 'user', class: 'fa-lg'
       li.nav-item
         = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link', data: { confirm: "are "}
         / = button_to 'ログアウト', logout_path, class: 'nav-link', method: :delete, data: { confirm: "are u suer?"}
