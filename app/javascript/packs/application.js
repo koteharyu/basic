@@ -8,6 +8,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap/dist/js/bootstrap.min.js'
 import 'swiper/swiper-bundle.js'
+import '../mypage'
 // import '../swiperswiper'
 
 Rails.start()

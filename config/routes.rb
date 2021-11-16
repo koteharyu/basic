@@ -20,9 +20,13 @@ Rails.application.routes.draw do
 
   resources :likes, only: %i[create destroy]
   resources :relationships, only: %i[create destroy]
+  resources :notifications, only: %i[] do
+    resource :read, only: %i[create]
+  end
 
   namespace :mypage do
     resource :account, only: %i[edit update]
+    resources :notifications, only: %i[index]
   end
 
 end
