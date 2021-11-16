@@ -11,6 +11,9 @@ ja:
         password: 'パスワード'
         password_confirmation: '確認用'
         avatar: 'アバター'
+        notification_on_comment: "コメント"
+        notification_on_like: "いいね"
+        notification_on_follow: "フォロー"
       post:
         images: '画像'
         body: '本文'
