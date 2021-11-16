@@ -27,4 +27,6 @@ class Post < ApplicationRecord
   has_many :like_users, through: :likes, source: :user
 
   mount_uploaders :images, PostImageUploader
+
+  scope :body_contain, ->(word) { where("body LIKE ?", "%#{word}%")}
 end
