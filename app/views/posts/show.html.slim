@@ -22,18 +22,12 @@
       / 投稿の本文
       .row.no-gutters
         .col-2
-          = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle'
+          = image_tag @post.user.avatar.url, size: '40x40', class: 'rounded-circle'
         .col-10
           = simple_format(@post.body)
       hr
       / コメント一覧
       = render 'comments/comments', comments: @comments
-      hr
-      .row.no-gutters
-        .col-2
-          = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle'
-        .col-10
-          | ダミーコメントダミーコメントダミーコメント
     hr.m-0
     .post-comment.p-3
       = render 'comments/form', post: @post, comment: @comment
