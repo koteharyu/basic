@@ -34,6 +34,7 @@ gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'kaminari', git: 'https://github.com/kaminari/kaminari'
 gem 'config'
+gem 'sidekiq'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
