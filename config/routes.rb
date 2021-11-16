@@ -29,8 +29,10 @@ Rails.application.routes.draw do
     resources :notifications, only: %i[index]
   end
 
+  require 'sidekiq/web'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
+    mount Sidekiq::Web, at: '/sidekiq'
   end
 
 end
