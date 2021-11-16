@@ -28,5 +28,8 @@ class Post < ApplicationRecord
 
   mount_uploaders :images, PostImageUploader
 
-  scope :body_contain, ->(word) { where("body LIKE ?", "%#{word}%")}
+  scope :body_contain, ->(word) { where('body LIKE ?', "%#{word}%") }
+  scope :comment_body, ->(word) { joins(:comments).where('comments.body LIKE ?', "%#{word}%") }
+  scope :username_contain, ->(word) { joins(:user).where('username LIKE ?', "%#{word}%") }
+
 end
