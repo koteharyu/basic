@@ -3,17 +3,14 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white
   button.navbar-toggler aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
   #navbarTogglerDemo02.collapse.navbar-collapse
-    = render 'posts/search_form', serach_form: @search_form
+    = render 'posts/search_form', search_form: @search_form
     ul.navbar-nav.mt-2.mt-lg-0
       li.nav-item
         = link_to new_post_path, class: 'nav-link' do
           = icon 'far', 'image', class: 'fa-lg'
       li.nav-item
-        a.nav-link href="#"
+        = link_to user_path(current_user), class: "nav-link" do
           = icon 'far', 'heart', class: 'fa-lg'
-      li.nav-item
-        a.nav-link href="#"
-          = icon 'far', 'user', class: 'fa-lg'
       li.nav-item
         = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link', data: { confirm: "are "}
         / = button_to 'ログアウト', logout_path, class: 'nav-link', method: :delete, data: { confirm: "are u suer?"}
