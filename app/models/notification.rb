@@ -22,4 +22,6 @@
 class Notification < ApplicationRecord
   belongs_to :notifiable, polymorphic: true
   belongs_to :user
+
+  scope :recent, ->(count) { order(created_at: :desc).limit(count) }
 end
