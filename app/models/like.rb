@@ -27,11 +27,11 @@ class Like < ApplicationRecord
 
   belongs_to :user
   belongs_to :post
-  has_one :notifications, as: :notifiable, dependent: :destroy
+  has_one :notification, as: :notifiable, dependent: :destroy
 
 
   validates :user_id, uniqueness: { scope: :post_id }
-  
+
   def partial_name
     "liked_to_own_post"
   end

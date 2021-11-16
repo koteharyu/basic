@@ -29,7 +29,7 @@ class Comment < ApplicationRecord
 
   belongs_to :user
   belongs_to :post
-  has_one :notifications, as: :notifiable, dependent: :destroy
+  has_one :notification, as: :notifiable, dependent: :destroy
 
   def partial_name
     "commented_to_own_post"
@@ -38,7 +38,7 @@ class Comment < ApplicationRecord
   def resource_path
     post_path(post, anchor: "comment-#{id}")
   end
-  
+
   private
 
   def create_notification

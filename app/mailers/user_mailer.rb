@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
 
-  def commnet_post
+  def comment_post
     @user_from = params[:user_from]
     @user_to = params[:user_to]
     @comment = params[:comment]
