@@ -22,7 +22,7 @@ class Relationship < ApplicationRecord
 
   belongs_to :follower, class_name: "User"
   belongs_to :followed, class_name: "User"
-  has_one :notifications, as: :notifiable, dependent: :destroy
+  has_one :notification, as: :notifiable, dependent: :destroy
 
   validates :follower_id, presence: true
   validates :followed_id, presence: true
@@ -35,7 +35,7 @@ class Relationship < ApplicationRecord
   def resource_path
     user_path(followed)
   end
-  
+
   private
 
   def create_notification
