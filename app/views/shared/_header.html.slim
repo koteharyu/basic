@@ -1,7 +1,5 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-white
   = link_to 'BASE', root_path, class: 'navbar-brand'
-  button.navbar-toggeler aria-controls="navbarTogglerDemo2" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo2" data-togglel="collapse" type="button"
-    span.navbar-toggler-icon
   #navbarogglerDemo2.collapse.navbar-collapse
     = render 'posts/search_form', search_form: @search_form
     ul.navbar-nav.mt-2.mt-lg-0
