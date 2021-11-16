@@ -2,7 +2,7 @@
   .col-md-10.offset-md-1
     .card
       .card-body
-        - if current_user.id == @user.id
+        - if current_user&.id == @user.id
           .text-center.mb-3
             = link_to "edit profile", edit_mypage_account_path, class: 'btn btn-warning'
         .text-center.mb-3
