@@ -3,10 +3,9 @@ class SearchPostsForm
   include ActiveModel::Attributes
 
   attribute :body, :string
-  attribute :comment_body, :string
 
   def search
-    scope = Post.distinct
+    scope = Post.all
     scope = scope.body_contain(body) if body.present?
     scope
   end
