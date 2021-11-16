@@ -1,7 +1,7 @@
-- if @notificaitons.present?
-  - @notificaitons.each do |notification|
+- if @notifications.present?
+  - @notifications.each do |notification|
     = render "shared/notifications/#{notification.call_appropriate_partial}", notification: notification
-    = paginate @notificaitons
+    = paginate @notifications
 
 - else
   .text-center

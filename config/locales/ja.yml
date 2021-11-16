@@ -10,7 +10,7 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: '確認用'
-        avatar: "アバター"
+        avatar: 'アバター'
       post:
         images: '画像'
         body: '本文'
@@ -24,4 +24,4 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
-      short: %m/%d %H:%M"
+      short: "%m/%d %H:%M"
