@@ -52,7 +52,6 @@ group :development, :test do
   gem 'letter_opener_web'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-  gem 'spring-commands-rspec'
 end
 
 group :development do
