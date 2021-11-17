@@ -9,6 +9,7 @@
 /vendor
 .vscode
 /public/uploads
+/public/images
 /app/assets/images
 dump.rdb
 /db/fixtures
