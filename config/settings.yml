@@ -1,0 +1,11 @@
+meta:
+  site: Basic
+  title: Basic ~retryr and rerror~
+  description: state with knowledge
+  keywords:
+    - Rails
+    - InstaClone
+    - Ruby
+  og:
+    type: website
+    image_path: og.png
