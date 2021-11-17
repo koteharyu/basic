@@ -8,4 +8,4 @@ meta:
     - Ruby
   og:
     type: website
-    image_path: og.png
+    image_path: /images/logo.jpg
