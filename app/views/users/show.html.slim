@@ -1,0 +1,20 @@
+- set_meta_tags title: 'Detail of User'
+
+.row
+  .col-md-10.offset-md-1
+    .card
+      .card-body
+        - if current_user&.id == @user.id
+          .text-center.mb-3
+            = link_to "edit profile", edit_mypage_account_path, class: 'btn btn-warning'
+        .text-center.mb-3
+          = image_tag @user.avatar.url, size: '100x100', class: 'rounded-circle me-1'
+        .profile.text-center
+          = @user.username
+        hr
+        .row
+          - if @user.posts.present?
+              = render partial: 'posts/thumbnail_post', collection: @user.posts
+          - else
+            .text-center
+              p 投稿がありません。
