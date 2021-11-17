@@ -18,6 +18,12 @@ module Basic
       g.skip_routes true
       g.assets false
       g.helper false
+      g.test_framework :rspec,
+        view_spec: false,
+        helper_spec: false,
+        controller_spec: false,
+        routing_spec: false,
+        request_spec: false
     end
 
     config.i18n.default_locale = :ja
