@@ -13,8 +13,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def default_url
-    'profile-placeholder.png'
+
+  def default_url(*args)
+    "/images/" + [version_name, 'profile-placeholder.png'].compact.join('_')
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
